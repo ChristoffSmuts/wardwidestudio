@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ward Wide Studio</title>
+  <meta name="description" content="Graham Ward and Wardwide Music Studios. World-class music production, composition and arrangement, based in Cape Town.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-1: #1a1a2e;
+      --bg-2: #16213e;
+      --bg-3: #0f3460;
+      --accent-1: #e94560;
+      --accent-2: #f47b89;
+      --text: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.7);
+      --text-dim: rgba(255, 255, 255, 0.5);
+      --border: rgba(255, 255, 255, 0.15);
+      --card-bg: rgba(255, 255, 255, 0.04);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-3) 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 20, 40, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 1.5rem;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 1rem;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .nav-links { display: flex; gap: 1.6rem; flex-wrap: wrap; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .hero { text-align: center; margin-bottom: 3rem; animation: fadeIn 1s ease-out; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 300;
+      letter-spacing: 1px;
+      line-height: 1.15;
+      margin-bottom: 0.9rem;
+    }
+    .hero h1 .accent {
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .tagline {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+      letter-spacing: 0.3px;
+    }
+
+    section { margin-bottom: 2.8rem; animation: fadeIn 1.1s ease-out; }
+    h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 .accent {
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--accent-2);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    p { color: var(--text-muted); margin-bottom: 0.8rem; font-size: 0.98rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    @media (max-width: 800px) {
+      .two-col { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    .services-list {
+      list-style: none;
+      display: grid;
+      gap: 0.9rem;
+    }
+    .services-list li {
+      padding-left: 1.2rem;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    .services-list li::before {
+      content: '·';
+      color: var(--accent-1);
+      font-weight: 700;
+      font-size: 1.4rem;
+      position: absolute;
+      left: 0;
+      top: -0.2rem;
+    }
+    .services-list strong {
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .credits-intro { margin-bottom: 1.2rem; font-size: 0.95rem; }
+    .credit-block { margin-bottom: 1.2rem; }
+    .credit-block:last-child { margin-bottom: 0; }
+    .credit-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.5rem;
+    }
+    .credit-list li {
+      padding: 0.3rem 0.85rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.3px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .project {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      transition: transform 0.25s, border-color 0.25s, background 0.25s;
+    }
+    .project:hover {
+      transform: translateY(-3px);
+      border-color: rgba(244, 123, 137, 0.4);
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .project .project-tag {
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+    .project h4 {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+    }
+    .project p { font-size: 0.85rem; margin: 0; line-height: 1.5; }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      max-width: 480px;
+      margin: 1rem auto 0;
+    }
+    .contact-card .role {
+      font-size: 0.7rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 0.4rem;
+    }
+    .contact-card .name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .contact-card a {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.4rem 0;
+      transition: color 0.2s;
+    }
+    .contact-card a:hover { color: var(--accent-2); }
+
+    .cta {
+      text-align: center;
+      margin-top: 1.8rem;
+    }
+    .cta a {
+      display: inline-block;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .cta a:hover {
+      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+      border-color: transparent;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.8rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+    footer .socials { margin-top: 0.6rem; }
+    footer .socials a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.2s;
+    }
+    footer .socials a:hover { color: var(--accent-2); }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">WARDWIDE MUSIC</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#credits">Credits</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="eyebrow">Composer · Producer · Multi-Instrumentalist</div>
+      <h1>Graham Ward &amp; <span class="accent">Wardwide Music</span></h1>
+      <p class="tagline">Four decades of world-class production, arrangement and performance. From London to LA to Cape Town.</p>
+    </header>
+
+    <section id="about">
+      <div class="two-col">
+        <div>
+          <h2>About <span class="accent">Graham</span></h2>
+          <p>Graham Ward is the lead producer, composer, arranger and multi-instrumentalist behind Wardwide Music. UK born, he started playing professionally at age five in his father's jazz ensemble, was recognised by the British music community as a child prodigy by seven, and at thirteen recorded his first album and joined the National Youth Jazz Orchestra.</p>
+          <p>That same year he was cast as a drummer in Alan Parker's <em>Bugsy Malone</em>. At nineteen he took the drum chair in the original London production of <em>CATS</em>, and went on to perform in the original West End run of <em>Chess</em> for ABBA's Benny Andersson and Björn Ulvaeus.</p>
+          <p>In 1996 Tom Jones offered Graham a contract and green card sponsorship, prompting his move to Los Angeles, where he toured with Tom Jones until 2002. He then built his own production company in LA with representation from talent agency I.C.M., before relocating to Cape Town in 2012, where Wardwide Music is now based.</p>
+        </div>
+        <div>
+          <h2>Our <span class="accent">Services</span></h2>
+          <ul class="services-list">
+            <li><strong>Complete production.</strong> End to end, from arrangement and lyric through final mix and master.</li>
+            <li><strong>Creative versatility.</strong> Producer, composer, arranger, programmer and player, plus a network of elite session musicians and vocalists.</li>
+            <li><strong>Artist development.</strong> Build confidence with a single track, scale to a full album.</li>
+            <li><strong>Score to picture.</strong> Bespoke soundtracks for film, trailers, broadcast and brand stories.</li>
+            <li><strong>Studio facilities.</strong> Available as a "room only" space for external engineers and artists.</li>
+            <li><strong>Remote sessions.</strong> Working globally with international artists and producers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="credits">
+      <h2>A Legacy of <span class="accent">Excellence</span></h2>
+      <p class="credits-intro">Graham's career has placed him alongside some of the most influential names in music history.</p>
+
+      <div class="credit-block">
+        <h3>Global Icons</h3>
+        <ul class="credit-list">
+          <li>Paul McCartney</li>
+          <li>Tom Jones</li>
+          <li>The Bee Gees</li>
+          <li>Ray Charles</li>
+          <li>The Pussycat Dolls</li>
+          <li>Elaine Paige</li>
+          <li>Paul Young</li>
+          <li>Donna Summer</li>
+          <li>Mark Knopfler</li>
+          <li>Roger Daltrey</li>
+          <li>Jimmy Page</li>
+          <li>John Paul Jones</li>
+          <li>Jon Anderson</li>
+          <li>Toni Braxton</li>
+          <li>The Supremes</li>
+          <li>Johnny Mathis</li>
+          <li>Chris De Burgh</li>
+          <li>Tokio Hotel</li>
+          <li>Rudimental</li>
+          <li>Aloe Blacc</li>
+          <li>Fred Durst</li>
+          <li>Wu-Tang Clan</li>
+        </ul>
+      </div>
+
+      <div class="credit-block">
+        <h3>Classical &amp; Orchestral</h3>
+        <ul class="credit-list">
+          <li>London Symphony Orchestra</li>
+          <li>Royal Philharmonic Orchestra</li>
+          <li>London Chamber Orchestra</li>
+          <li>London Philharmonia</li>
+          <li>José Carreras</li>
+          <li>Plácido Domingo</li>
+          <li>Kiri Te Kanawa</li>
+          <li>Sarah Brightman</li>
+          <li>Michael Crawford</li>
+        </ul>
+      </div>
+
+      <div class="credit-block">
+        <h3>Theatre, Live &amp; Production</h3>
+        <ul class="credit-list">
+          <li>CATS (original West End drummer)</li>
+          <li>Chess (original West End)</li>
+          <li>Bugsy Malone (Alan Parker)</li>
+          <li>Two Royal Command Performances</li>
+          <li>Phil Spector co-production</li>
+          <li>Brooke White</li>
+          <li>Matt Goss</li>
+          <li>Days Difference</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Selected <span class="accent">Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project">
+          <span class="project-tag">Film</span>
+          <h4>Ocean's Twelve</h4>
+          <p>Worldwide trailer music. Nominated Best Trailer at the Golden Trailer Awards.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-tag">Film</span>
+          <h4>Dias Santana</h4>
+          <p>Trailer for the film that hit number one on Netflix for two weeks.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-tag">Sport</span>
+          <h4>NASCAR</h4>
+          <p>High-energy orchestral theme composition.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-tag">Television</span>
+          <h4>MTV &amp; VH1</h4>
+          <p>Music for <em>Battle for Ozzfest</em>, <em>The Newlyweds</em>, <em>The Osbournes</em> and <em>Love Couch</em>.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-tag">Television</span>
+          <h4>Making the Band</h4>
+          <p>Two seasons of music production for the Sean Combs show.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-tag">Commercial</span>
+          <h4>Allan Gray</h4>
+          <p>Composition and production for commercial campaigns.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-tag">Commercial</span>
+          <h4>iTrain Golf</h4>
+          <p>Corporate commercial scores.</p>
+        </div>
+
+        <div class="project">
+          <span class="project-tag">Artist</span>
+          <h4>Choni G</h4>
+          <p>Full production and video for "Od Yavo Shalom (Salaam)".</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get in <span class="accent">Touch</span></h2>
+      <p>Wardwide Music is based in Cape Town and works with clients locally and globally. Whether you are starting your first track or scoring a feature, get in touch to discuss your project.</p>
+
+      <div class="contact-card">
+        <div class="role">Producer · Writer · Founder</div>
+        <div class="name">Graham Ward</div>
+        <a href="tel:+27713807871">+27 71 380 7871</a>
+        <a href="mailto:graham@wardwide-music.com">graham@wardwide-music.com</a>
+        <a href="mailto:biggmusic@gmail.com">biggmusic@gmail.com</a>
+      </div>
+
+      <div class="cta">
+        <a href="mailto:graham@wardwide-music.com">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div>© Wardwide Music · Cape Town, South Africa</div>
+    <div class="socials">
+      <a href="https://www.facebook.com/WardWideMusic/" target="_blank" rel="noopener">Facebook</a> ·
+      <a href="https://www.instagram.com/wardwidemusic/" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://wardwide-music.com" target="_blank" rel="noopener">wardwide-music.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ward Wide Studio</title>
-  <meta name="description" content="Graham Ward and Wardwide Music Studios. World-class music production, composition and arrangement, based in Cape Town.">
+  <title>Wardwide Studio | Wardwide Studio</title>
+  <meta name="description" content="Graham Ward and Wardwide Studio. World-class music production, score to picture, and ADR services based in Cape Town.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -135,7 +135,7 @@
 
     .two-col {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 3rem;
     }
     @media (max-width: 800px) {
@@ -168,9 +168,7 @@
       letter-spacing: 0.3px;
     }
 
-    .credits-intro { margin-bottom: 1.2rem; font-size: 0.95rem; }
     .credit-block { margin-bottom: 1.2rem; }
-    .credit-block:last-child { margin-bottom: 0; }
     .credit-list {
       list-style: none;
       display: flex;
@@ -190,14 +188,14 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
     }
     .project {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 1rem 1.2rem;
+      padding: 1.2rem;
       transition: transform 0.25s, border-color 0.25s, background 0.25s;
     }
     .project:hover {
@@ -220,6 +218,40 @@
       color: var(--text);
     }
     .project p { font-size: 0.85rem; margin: 0; line-height: 1.5; }
+
+    /* Rates Table Styling */
+    .rates-container {
+        margin-top: 2rem;
+        overflow-x: auto;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        background: var(--card-bg);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+    }
+    th {
+        background: rgba(255,255,255,0.05);
+        color: var(--accent-2);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+    .special-offer {
+        background: rgba(233, 69, 96, 0.1);
+        border: 1px dashed var(--accent-1);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+    }
 
     .contact-card {
       background: var(--card-bg);
@@ -300,11 +332,12 @@
 
   <nav>
     <div class="nav-inner">
-      <div class="logo">WARDWIDE MUSIC</div>
+      <div class="logo">WARDWIDE STUDIO</div>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#credits">Credits</a>
         <a href="#projects">Projects</a>
+        <a href="#rates">Rates</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -313,28 +346,29 @@
   <div class="wrap">
 
     <header class="hero">
-      <div class="eyebrow">Composer · Producer · Multi-Instrumentalist</div>
-      <h1>Graham Ward &amp; <span class="accent">Wardwide Music</span></h1>
-      <p class="tagline">Four decades of world-class production, arrangement and performance. From London to LA to Cape Town.</p>
+      <div class="eyebrow">Composer · Producer · Engineer</div>
+      <h1>Graham Ward &amp; <span class="accent">Wardwide Studio</span></h1>
+      <p class="tagline">Four decades of world-class production and score to picture. From London to LA to Cape Town.</p>
     </header>
 
     <section id="about">
       <div class="two-col">
         <div>
           <h2>About <span class="accent">Graham</span></h2>
-          <p>Graham Ward is the lead producer, composer, arranger and multi-instrumentalist behind Wardwide Music. UK born, he started playing professionally at age five in his father's jazz ensemble, was recognised by the British music community as a child prodigy by seven, and at thirteen recorded his first album and joined the National Youth Jazz Orchestra.</p>
+          <p>Graham Ward is the lead producer, composer, and arranger behind Wardwide Studio. UK born, he started playing professionally at age five in his father's jazz ensemble and was recognized as a child prodigy by seven. By thirteen, he recorded his first album and joined the National Youth Jazz Orchestra.</p>
           <p>That same year he was cast as a drummer in Alan Parker's <em>Bugsy Malone</em>. At nineteen he took the drum chair in the original London production of <em>CATS</em>, and went on to perform in the original West End run of <em>Chess</em> for ABBA's Benny Andersson and Björn Ulvaeus.</p>
-          <p>In 1996 Tom Jones offered Graham a contract and green card sponsorship, prompting his move to Los Angeles, where he toured with Tom Jones until 2002. He then built his own production company in LA with representation from talent agency I.C.M., before relocating to Cape Town in 2012, where Wardwide Music is now based.</p>
+          <p>Graham's career has placed him alongside some of the most influential names in music history, working with icons including <strong>Paul McCartney, Tom Jones, The Bee Gees, Ray Charles, Mark Knopfler, Roger Daltrey, Jimmy Page, John Paul Jones, Nick Heyward and the Wu-Tang Clan</strong>.</p>
+          <p>In 1996 Tom Jones offered Graham a contract and green card sponsorship, prompting a move to Los Angeles, where he toured with Jones until 2002. He then built his own production company in LA before relocating to Cape Town in 2012, where Wardwide Studio is now based.</p>
         </div>
         <div>
           <h2>Our <span class="accent">Services</span></h2>
           <ul class="services-list">
-            <li><strong>Complete production.</strong> End to end, from arrangement and lyric through final mix and master.</li>
-            <li><strong>Creative versatility.</strong> Producer, composer, arranger, programmer and player, plus a network of elite session musicians and vocalists.</li>
-            <li><strong>Artist development.</strong> Build confidence with a single track, scale to a full album.</li>
-            <li><strong>Score to picture.</strong> Bespoke soundtracks for film, trailers, broadcast and brand stories.</li>
-            <li><strong>Studio facilities.</strong> Available as a "room only" space for external engineers and artists.</li>
-            <li><strong>Remote sessions.</strong> Working globally with international artists and producers.</li>
+            <li><strong>Complete production.</strong> End to end, from arrangement through final mix and master.</li>
+            <li><strong>ADR Services.</strong> Additional Dialogue Recording for voice-to-picture, film, advertising, and corporate.</li>
+            <li><strong>Creative versatility.</strong> Producer, composer, and arranger with a network of elite session players.</li>
+            <li><strong>Artist development.</strong> Full vocal production services including vocal editing, tuning, arrangement and recording support. From raw vocals to full track builds, single releases to complete professional albums, including mixing and mastering.</li>
+            <li><strong>Score to picture.</strong> Bespoke soundtracks for film, trailers, corporate and television.</li>
+            <li><strong>Studio facilities.</strong> Available as a "room only" space for external engineers.</li>
           </ul>
         </div>
       </div>
@@ -342,35 +376,6 @@
 
     <section id="credits">
       <h2>A Legacy of <span class="accent">Excellence</span></h2>
-      <p class="credits-intro">Graham's career has placed him alongside some of the most influential names in music history.</p>
-
-      <div class="credit-block">
-        <h3>Global Icons</h3>
-        <ul class="credit-list">
-          <li>Paul McCartney</li>
-          <li>Tom Jones</li>
-          <li>The Bee Gees</li>
-          <li>Ray Charles</li>
-          <li>The Pussycat Dolls</li>
-          <li>Elaine Paige</li>
-          <li>Paul Young</li>
-          <li>Donna Summer</li>
-          <li>Mark Knopfler</li>
-          <li>Roger Daltrey</li>
-          <li>Jimmy Page</li>
-          <li>John Paul Jones</li>
-          <li>Jon Anderson</li>
-          <li>Toni Braxton</li>
-          <li>The Supremes</li>
-          <li>Johnny Mathis</li>
-          <li>Chris De Burgh</li>
-          <li>Tokio Hotel</li>
-          <li>Rudimental</li>
-          <li>Aloe Blacc</li>
-          <li>Fred Durst</li>
-          <li>Wu-Tang Clan</li>
-        </ul>
-      </div>
 
       <div class="credit-block">
         <h3>Classical &amp; Orchestral</h3>
@@ -388,100 +393,123 @@
       </div>
 
       <div class="credit-block">
-        <h3>Theatre, Live &amp; Production</h3>
+        <h3>Theatre &amp; Live</h3>
         <ul class="credit-list">
-          <li>CATS (original West End drummer)</li>
+          <li>CATS (original West End)</li>
           <li>Chess (original West End)</li>
-          <li>Bugsy Malone (Alan Parker)</li>
-          <li>Two Royal Command Performances</li>
-          <li>Phil Spector co-production</li>
-          <li>Brooke White</li>
-          <li>Matt Goss</li>
-          <li>Days Difference</li>
+          <li>Hair</li>
+          <li>Song and Dance</li>
+          <li>Rocky Horror Show</li>
+          <li>Kiss of the Spider Woman</li>
+          <li>Metropolis</li>
+          <li>King</li>
         </ul>
       </div>
     </section>
 
     <section id="projects">
-      <h2>Selected <span class="accent">Projects</span></h2>
+      <h2>Featured <span class="accent">Projects</span></h2>
       <div class="projects-grid">
 
         <div class="project">
-          <span class="project-tag">Film</span>
+          <span class="project-tag">Score to Picture</span>
           <h4>Ocean's Twelve</h4>
           <p>Worldwide trailer music. Nominated Best Trailer at the Golden Trailer Awards.</p>
         </div>
 
         <div class="project">
-          <span class="project-tag">Film</span>
+          <span class="project-tag">Score to Picture</span>
           <h4>Dias Santana</h4>
-          <p>Trailer for the film that hit number one on Netflix for two weeks.</p>
+          <p>Full score with Co-Composer Ross Mc Donald for the Netflix #1 hit.</p>
         </div>
 
         <div class="project">
-          <span class="project-tag">Sport</span>
-          <h4>NASCAR</h4>
-          <p>High-energy orchestral theme composition.</p>
+          <span class="project-tag">Score to Picture</span>
+          <h4>The Recce</h4>
+          <p>Feature film score, co-scored with Richard Craker.</p>
         </div>
 
         <div class="project">
-          <span class="project-tag">Television</span>
-          <h4>MTV &amp; VH1</h4>
-          <p>Music for <em>Battle for Ozzfest</em>, <em>The Newlyweds</em>, <em>The Osbournes</em> and <em>Love Couch</em>.</p>
+            <span class="project-tag">Television</span>
+            <h4>FOX Sports Network</h4>
+            <p>Extensive libraries created for the network, including NASCAR Trucks theme.</p>
         </div>
 
         <div class="project">
-          <span class="project-tag">Television</span>
-          <h4>Making the Band</h4>
-          <p>Two seasons of music production for the Sean Combs show.</p>
+            <span class="project-tag">Television</span>
+            <h4>The Restaurant (NBC)</h4>
+            <p>Theme and incidental music for the high-rated reality series.</p>
         </div>
 
         <div class="project">
-          <span class="project-tag">Commercial</span>
-          <h4>Allan Gray</h4>
-          <p>Composition and production for commercial campaigns.</p>
-        </div>
-
-        <div class="project">
-          <span class="project-tag">Commercial</span>
-          <h4>iTrain Golf</h4>
-          <p>Corporate commercial scores.</p>
-        </div>
-
-        <div class="project">
-          <span class="project-tag">Artist</span>
-          <h4>Choni G</h4>
-          <p>Full production and video for "Od Yavo Shalom (Salaam)".</p>
+          <span class="project-tag">Commercials</span>
+          <h4>Commerical Scores</h4>
+          <p>Bespoke music for Kia, Yamaha, Allan Gray, Yellow Pages, and MaXhosa.</p>
         </div>
 
       </div>
     </section>
 
+    <section id="rates">
+        <h2>Studio <span class="accent">Rates</span></h2>
+        <div class="rates-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service Type</th>
+                        <th>Hourly (R)</th>
+                        <th>Day Rate - 8hrs (R)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Studio Only</td>
+                        <td>500</td>
+                        <td>3,500</td>
+                    </tr>
+                    <tr>
+                        <td>Engineer + Studio</td>
+                        <td>800</td>
+                        <td>4,500</td>
+                    </tr>
+                    <tr>
+                        <td>Production + Engineer + Studio</td>
+                        <td>1,000</td>
+                        <td>6,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="special-offer">
+            <h3>Winter Specials &amp; Packages</h3>
+            <p><strong>Winter Special:</strong> 20% off all standard hourly and day rates.</p>
+            <p><strong>Artist Vocal Package:</strong> R1,000 for 2 hours. Includes vocal recording and professional production/direction.</p>
+            <p><em>*Mixing (R3,000) and Mastering (R1,500) estimates available per project. Full track production quoted based on session player requirements.</em></p>
+        </div>
+    </section>
+
     <section id="contact">
       <h2>Get in <span class="accent">Touch</span></h2>
-      <p>Wardwide Music is based in Cape Town and works with clients locally and globally. Whether you are starting your first track or scoring a feature, get in touch to discuss your project.</p>
-
       <div class="contact-card">
         <div class="role">Producer · Writer · Founder</div>
         <div class="name">Graham Ward</div>
         <a href="tel:+27713807871">+27 71 380 7871</a>
-        <a href="mailto:graham@wardwide-music.com">graham@wardwide-music.com</a>
         <a href="mailto:biggmusic@gmail.com">biggmusic@gmail.com</a>
       </div>
 
       <div class="cta">
-        <a href="mailto:graham@wardwide-music.com">Start a Project</a>
+        <a href="https://wa.me/27713807871?text=Hi%20Graham%2C%20I%20need%20to%20book%20you%20for%20some%20work.">Start a Project</a>
       </div>
     </section>
 
   </div>
 
   <footer>
-    <div>© Wardwide Music · Cape Town, South Africa</div>
+    <div>© Wardwide Studio · Cape Town, South Africa</div>
     <div class="socials">
       <a href="https://www.facebook.com/WardWideMusic/" target="_blank" rel="noopener">Facebook</a> ·
-      <a href="https://www.instagram.com/wardwidemusic/" target="_blank" rel="noopener">Instagram</a> ·
-      <a href="https://wardwide-music.com" target="_blank" rel="noopener">wardwide-music.com</a>
+      <a href="https://www.instagram.com/wardwidemusic/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </footer>
 

@@ -219,113 +219,58 @@
     }
     .project p { font-size: 0.85rem; margin: 0; line-height: 1.5; }
 
-    /* Rates Table Styling */
-    .rates-container {
-        margin-top: 2rem;
-        overflow-x: auto;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        background: var(--card-bg);
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    th, td {
-        padding: 1rem;
-        text-align: left;
-        border-bottom: 1px solid var(--border);
-    }
-    th {
-        background: rgba(255,255,255,0.05);
+    /* Audio Player Styles */
+    .audio-player-wrapper { margin-top: 10px; }
+    #audio-player { width: 100%; margin-bottom: 10px; }
+    #current-track-label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
         color: var(--accent-2);
-        text-transform: uppercase;
-        font-size: 0.75rem;
-        letter-spacing: 1px;
+        font-size: 0.9rem;
     }
-    .special-offer {
-        background: rgba(233, 69, 96, 0.1);
-        border: 1px dashed var(--accent-1);
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin-top: 1.5rem;
+    .track-list {
+        max-height: 150px;
+        overflow-y: auto;
+        border-top: 1px solid var(--border);
+        padding-top: 10px;
     }
+    .track-btn {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        padding: 5px 0;
+        cursor: pointer;
+        font-size: 0.85rem;
+    }
+    .track-btn:hover { color: var(--text); }
 
-    .contact-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      max-width: 480px;
-      margin: 1rem auto 0;
-    }
-    .contact-card .role {
-      font-size: 0.7rem;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--accent-2);
-      margin-bottom: 0.4rem;
-    }
-    .contact-card .name {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-    }
-    .contact-card a {
-      display: block;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      padding: 0.4rem 0;
-      transition: color 0.2s;
-    }
+    /* Rates Table Styling */
+    .rates-container { margin-top: 2rem; overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; color: var(--text-muted); background: var(--card-bg); border-radius: 10px; overflow: hidden; }
+    th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(255,255,255,0.05); color: var(--accent-2); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
+    .special-offer { background: rgba(233, 69, 96, 0.1); border: 1px dashed var(--accent-1); padding: 1.5rem; border-radius: 10px; margin-top: 1.5rem; }
+
+    .contact-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; max-width: 480px; margin: 1rem auto 0; }
+    .contact-card .role { font-size: 0.7rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent-2); margin-bottom: 0.4rem; }
+    .contact-card .name { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.2rem; }
+    .contact-card a { display: block; color: var(--text-muted); text-decoration: none; font-size: 0.95rem; padding: 0.4rem 0; transition: color 0.2s; }
     .contact-card a:hover { color: var(--accent-2); }
 
-    .cta {
-      text-align: center;
-      margin-top: 1.8rem;
-    }
-    .cta a {
-      display: inline-block;
-      padding: 0.85rem 2.2rem;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      transition: all 0.3s;
-    }
-    .cta a:hover {
-      background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
-      border-color: transparent;
-    }
+    .cta { text-align: center; margin-top: 1.8rem; }
+    .cta a { display: inline-block; padding: 0.85rem 2.2rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50px; color: var(--text); text-decoration: none; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s; }
+    .cta a:hover { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); border-color: transparent; }
 
-    footer {
-      text-align: center;
-      padding: 1.8rem 1.5rem;
-      border-top: 1px solid var(--border);
-      color: var(--text-dim);
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-    }
+    footer { text-align: center; padding: 1.8rem 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.8rem; letter-spacing: 1px; }
     footer .socials { margin-top: 0.6rem; }
-    footer .socials a {
-      color: var(--text-muted);
-      text-decoration: none;
-      margin: 0 0.5rem;
-      transition: color 0.2s;
-    }
+    footer .socials a { color: var(--text-muted); text-decoration: none; margin: 0 0.5rem; transition: color 0.2s; }
     footer .socials a:hover { color: var(--accent-2); }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -344,7 +289,6 @@
   </nav>
 
   <div class="wrap">
-
     <header class="hero">
       <div class="eyebrow">Composer · Producer · Engineer</div>
       <h1>Graham Ward &amp; <span class="accent">Wardwide Studio</span></h1>
@@ -374,7 +318,7 @@
       </div>
     </section>
 
-    <section id="credits">
+       <section id="credits">
       <h2>A Legacy of <span class="accent">Excellence</span></h2>
 
       <div class="credit-block">
@@ -408,47 +352,56 @@
     </section>
 
     <section id="projects">
-      <h2>Featured <span class="accent">Projects</span></h2>
-      <div class="projects-grid">
+  <h2>Featured <span class="accent">Projects</span></h2>
+  <div class="projects-grid">
+    
+    <!-- Audio Player Project -->
+    <div class="project">
+      <span class="project-tag">Listen to Samples</span>
+      <span id="current-track-label">Select a track below</span>
+      <audio id="audio-player" controls></audio>
+      <div class="track-list" id="track-list"></div>
+    </div>
 
-        <div class="project">
-          <span class="project-tag">Score to Picture</span>
-          <h4>Ocean's Twelve</h4>
-          <p>Worldwide trailer music. Nominated Best Trailer at the Golden Trailer Awards.</p>
-        </div>
+    <!-- Other Projects -->
+    <div class="project">
+      <span class="project-tag">Score to Picture</span>
+      <h4>Ocean's Twelve</h4>
+      <p>Worldwide trailer music. Nominated Best Trailer at the Golden Trailer Awards.</p>
+    </div>
 
-        <div class="project">
-          <span class="project-tag">Score to Picture</span>
-          <h4>Dias Santana</h4>
-          <p>Full score with Co-Composer Ross Mc Donald for the Netflix #1 hit.</p>
-        </div>
+    <div class="project">
+      <span class="project-tag">Score to Picture</span>
+      <h4>Dias Santana</h4>
+      <p>Full score with Co-Composer Ross Mc Donald for the Netflix #1 hit.</p>
+    </div>
 
-        <div class="project">
-          <span class="project-tag">Score to Picture</span>
-          <h4>The Recce</h4>
-          <p>Feature film score, co-scored with Richard Craker.</p>
-        </div>
+    <div class="project">
+      <span class="project-tag">Score to Picture</span>
+      <h4>The Recce</h4>
+      <p>Feature film score, co-scored with Richard Craker.</p>
+    </div>
 
-        <div class="project">
-            <span class="project-tag">Television</span>
-            <h4>FOX Sports Network</h4>
-            <p>Extensive libraries created for the network, including NASCAR Trucks theme.</p>
-        </div>
+    <div class="project">
+      <span class="project-tag">Television</span>
+      <h4>FOX Sports Network</h4>
+      <p>Extensive libraries created for the network, including NASCAR Trucks theme.</p>
+    </div>
 
-        <div class="project">
-            <span class="project-tag">Television</span>
-            <h4>The Restaurant (NBC)</h4>
-            <p>Theme and incidental music for the high-rated reality series.</p>
-        </div>
+    <div class="project">
+      <span class="project-tag">Television</span>
+      <h4>The Restaurant (NBC)</h4>
+      <p>Theme and incidental music for the high-rated reality series.</p>
+    </div>
 
-        <div class="project">
-          <span class="project-tag">Commercials</span>
-          <h4>Commerical Scores</h4>
-          <p>Bespoke music for Kia, Yamaha, Allan Gray, Yellow Pages, and MaXhosa.</p>
-        </div>
+    <div class="project">
+      <span class="project-tag">Commercials</span>
+      <h4>Commercial Scores</h4>
+      <p>Bespoke music for Kia, Yamaha, Allan Gray, Yellow Pages, and MaXhosa.</p>
+    </div>
 
-      </div>
-    </section>
+  </div> <!-- This single closing div now correctly closes the grid -->
+</section>
 
     <section id="rates">
         <h2>Studio <span class="accent">Rates</span></h2>
@@ -502,9 +455,8 @@
         <a href="https://wa.me/27713807871?text=Hi%20Graham%2C%20I%20need%20to%20book%20you%20for%20some%20work.">Start a Project</a>
       </div>
     </section>
-
   </div>
-
+  
   <footer>
     <div>© Wardwide Studio · Cape Town, South Africa</div>
     <div class="socials">
@@ -512,6 +464,35 @@
       <a href="https://www.instagram.com/wardwidemusic/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </footer>
+  
+  <script>
+    const tracks = [
+      { title: "1. Ready To Fight This", url: "audio/1. Ready To Fight This - Glen Hartmann (SA Artist).mp3" },
+      { title: "2. club Mad chelsea.  dagger mix3.0", url: "audio/club Mad chelsea.  dagger mix3.0 .mp3" },
+      { title: "3. club MAd psycho killer  mix_2.0n  21 feb_4", url: "audio/club MAd psycho killer  mix_2.0n  21 feb_4.mp3" },
+      { title: "4. MDK  giving thanks mix 1,0", url: "audio/MDK  giving thanks mix 1,0 mp3.mp3" },
+      { title: "5. NICOLE  MILLER  SPOOKY Mix 2.0", url: "audio/NICOLE  MILLER  SPOOKY Mix 2.0.mp3" },
+      { title: "6. our skins  mix 3.0", url: "audio/our skins  mix 3.0  MP3.mp3" },
+      { title: "7. Piano Ballad", url: "track7.mp3" },
+      { title: "8. Stop and Look - Mix 1.2", url: "audio/Stop and Look - Mix 1.2.mp3" },
+      { title: "9. Funk Bass Groove", url: "track9.mp3" },
+    ];
 
+    const audioPlayer = document.getElementById('audio-player');
+    const trackLabel = document.getElementById('current-track-label');
+    const trackList = document.getElementById('track-list');
+
+    tracks.forEach(track => {
+      const btn = document.createElement('button');
+      btn.className = 'track-btn';
+      btn.innerText = track.title;
+      btn.onclick = () => {
+        audioPlayer.src = track.url;
+        trackLabel.innerText = "Playing: " + track.title;
+        audioPlayer.play();
+      };
+      trackList.appendChild(btn);
+    });
+  </script>
 </body>
 </html>
